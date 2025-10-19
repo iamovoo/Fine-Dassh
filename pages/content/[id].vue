@@ -13,9 +13,9 @@
        </div>
         <div class="bg-yellow-200 border mt-16 w-80 rounded-md flex gap-3"> 
            <div class="w-10 overflow-hidden ">
-            <a :href="food.strYoutube"><img src="/assets/youtube2.png" alt="" class="w-32 opacity-70 object-contain"></img></a>
+            <a :href="food.strYoutube" target="_blank"><img src="/assets/youtube2.png" alt="" class="w-32 opacity-70 object-contain"></img></a>
           </div>
-         <h2 class=" font-bold text-md text-red-500 hover:underline hover:text-blue-500 active:opacity-70 pt-3 "><a :href="food.strYoutube">click for a YouTube Tutorial</a></h2>
+         <h2 class=" font-bold text-md text-red-500 hover:underline hover:text-blue-500 active:opacity-70 pt-3 "><a :href="food.strYoutube " target="_blank">click for a YouTube Tutorial</a></h2>
        </div>
       </div>
       <div>
