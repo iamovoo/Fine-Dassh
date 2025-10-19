@@ -112,12 +112,9 @@ const countries = ref('')
 const listOfCategory = ref('')
 const mealOfTheDay = ref('')
 const savedId = useCookie('saved')
-import { useToast } from "vue-toastification"
-import "vue-toastification/dist/index.css"
 
-const toast = useToast()
 
-  
+onMounted( async()=>{
 const {data} = await useFetch('https://www.themealdb.com/api/json/v1/1/random.php')
 food.value = await data.value.meals[0];
 
@@ -126,9 +123,7 @@ console.log(food.value);
 const save = function(){
 savedId.value = food.value.idMeal
  console.log('hello', savedId.value);
- toast('Saved successfully')
 }
-
 const randomize = async ()=>{
   const {data} = await useFetch('https://www.themealdb.com/api/json/v1/1/random.php')
   food.value = await data.value.meals[0];
@@ -156,8 +151,7 @@ const {data:Ingredients} = await useFetch('https://www.themealdb.com/api/json/v1
 ingredients.value = await Ingredients.value.meals;
 totalIngredients.value = [...Ingredients.value.meals].length
 // console.log(ingredients.value, totalIngredients.value, Ingredients.value);
-
-
+ })
 
 const showCategories = function(){
    categoryBtnIsClicked.value = true
